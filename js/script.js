@@ -70,11 +70,24 @@ $(document).ready(() => {
     // $('img').attr('src', 'img/esfera_2.png');
     $('img').attr('border', '20');
 
-    console.log( $('div').attr('style', 'background-color: blue; width: 200px; height: 200px;') );
+    // console.log( $('div').attr('style', 'background-color: blue; width: 200px; height: 200px;') );
     
     console.log( $('input').attr('type', 'password') );
 });
 
+// *** Recuperando e Manipulando o conteúdo dos elementos
+
+$(document).ready(() => {
+    console.log( 'Conteudo DIV1 : ', $('#div1').html() );
+    console.log( 'Conteudo DIV2 : ', $('#div2').html() );
+
+    // A utilização do método html() permite recuperar o conteúdo de um elemento
+    console.log( 'Conteudo DIV1 : ', $('#div1').html('<strong style="color: red">Eu sou um novo conteúdo!</strong>') );
+    
+    // A utilização do método text() é semelhante ao método html(), porém ele não interpreta tags HTML
+    console.log( 'Conteudo DIV1 : ', $('#div1').text('<strong style="color: red">Eu sou um novo conteúdo!</strong>') );
+
+});
 
 
 
