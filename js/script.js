@@ -1,4 +1,4 @@
-// Teste de jQuery com alerta
+// *** Teste de jQuery com alerta
 
 $(document).ready(() => {
     $('#btn').click(() => {
@@ -25,7 +25,7 @@ console.log( $('select') );
 console.log( $('.lista1'));
 console.log( $('#img'));
 
-// Combinação de seletores
+// *** Combinação de seletores
     // Selecione elementos por tag específica dentro de um elemento - $('elemento tag')
 console.log( $('input.exemplo1')) ;
     // Selecionar elementos por classe de classe específica dentro de um elemento - $('elemento .classe')
@@ -39,7 +39,7 @@ console.log( $('.lista1 .exemplo1:last') ); // Último elemento
 console.log( $('.lista1 .exemplo1:even') ); // Elementos pares
 console.log( $('.lista1 .exemplo1:odd') ); // Elementos ímpares
 
-// Sequência de execução de código
+// *** Sequência de execução de código
 
 // Primeira forma de execução - Mais utilizada
 $(document).ready(() => {
@@ -61,3 +61,22 @@ $(teste);
 $(function () {
     console.log($('#exemplo'));
 });
+
+
+// *** Recuperando Manipulando Atributos dos Elementos 
+
+$(document).ready(() => {
+
+    // $('img').attr('src', 'img/esfera_2.png');
+    $('img').attr('border', '20');
+
+    console.log( $('div').attr('style', 'background-color: blue; width: 200px; height: 200px;') );
+    
+    console.log( $('input').attr('type', 'password') );
+});
+
+
+
+
+
+
