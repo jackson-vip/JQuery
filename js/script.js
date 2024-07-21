@@ -108,3 +108,23 @@ $.each( $('.interesses:checked'), ( indice, valor ) => {
 })
 
 
+// *** Inserindo e Removendo Elementos no DOM com jQuery
+
+/* 
+
+Vamos aprender um pouco : 
+prepend; append; before; after 
+
+*/
+
+$(document).ready(() => {
+    $('#lista1').append('<li>Item 4</li>'); // Adiciona um item ao final da lista
+    $('#lista1').prepend('<li>Item 0</li>'); // Adiciona um item ao início da lista
+    $('#lista1').before('<h2>Lista 1</h2>'); // Adiciona um elemento antes da lista
+    $('#lista1').after('<p>Texto após a lista</p>'); // Adiciona um elemento após a lista
+
+    $('#lista3').html('<p>Eu substitui todo o conteúdo que estava aqui! </p>'); // Substitui todo o conteúdo do elemento
+    $('#lista3').remove(); // Remove o elemento
+    $('.remove-item').remove(); // Remove todos os elementos com a classe remove-item
+
+});
