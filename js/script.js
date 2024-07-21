@@ -38,3 +38,26 @@ console.log( $('.lista1 .exemplo1:first') ); // Primeiro elemento
 console.log( $('.lista1 .exemplo1:last') ); // Último elemento
 console.log( $('.lista1 .exemplo1:even') ); // Elementos pares
 console.log( $('.lista1 .exemplo1:odd') ); // Elementos ímpares
+
+// Sequência de execução de código
+
+// Primeira forma de execução - Mais utilizada
+$(document).ready(() => {
+    
+    function teste () {
+        console.log($('#exemplo'));
+    }
+    teste();
+});
+
+// Segunda forma de execução
+function teste () {
+    console.log($('#exemplo'));
+}
+
+$(teste);
+
+// Terceira forma de execução
+$(function () {
+    console.log($('#exemplo'));
+});
