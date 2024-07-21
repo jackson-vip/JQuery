@@ -98,3 +98,13 @@ $(document).ready(() => {
 // $('#nome').val('Fulano'); // Atribui um valor ao campo
 
 
+// Vamos aprender a manipular os elementos input do tipo checkbox e radio
+
+$('.sexo:checked').val(); // Recupera o valor do campo
+
+// Com a utilização do método each() é possível percorrer todos os elementos selecionados e realizar uma ação para cada um deles
+$.each( $('.interesses:checked'), ( indice, valor ) => {
+    console.log( indice , valor.value )
+})
+
+
