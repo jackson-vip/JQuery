@@ -1,0 +1,16 @@
+.campo {
+    border: none;
+    padding: 10px;
+}
+
+.padao {
+    background-color: #ddd;
+}
+
+.erro {
+    background-color: #f00;
+}
+
+.borda {
+    border: 1px solid #000;
+}

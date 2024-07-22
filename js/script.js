@@ -149,4 +149,52 @@ $(document).ready(() => {
 
 });
 
+// *** Manipulando Classes dos Elementos
 
+/* 
+
+» css() - adiciona propriedades inline ao elemento selecionado
+» addClass() - Adiciona uma classe ao elemento
+» removeClass() - Remove uma classe do elemento
+» hasClass() - Verifica se o elemento possui uma classe
+
+*/
+
+$(document).ready(() => {
+    
+    // Podemos chamar o método css() quantas vezes quisermos
+    console.log( $ ('#topo').css('background-color', 'blue').css('color', '#fff').css('padding', '10px'));
+    
+    // É possivel passar um objeto com vários atributos 
+    console.log( $ ('#topo').css(
+        {
+            'background-color': 'lightblue',
+            'color': 'black',
+            'padding': '10px'
+        }
+    ));
+
+    // Adiciona uma classe ao elemento
+
+    console.log( $('input').addClass('campo') ); // Adiciona a classe campo ao elemento input
+    console.log( $('input').addClass('campo padao') ); 
+    // console.log( $('input').addClass('campo padao erro') ); 
+    console.log( $('textarea').addClass('campo erro') ); 
+    
+    console.log( $('textarea').hasClass('erro') ); // Verifica se o elemento possui a classe erro
+    console.log( $('textarea').hasClass('padrao') ); // Verifica se o elemento possui a class padrao
+    
+    // Remove uma classe do elemento
+    console.log( $('textarea').removeClass('erro') ); // Remove a classe erro do elemento
+
+    // Se o elemento não possuir a classe erro, adiciona a classe borda
+    if ( !$('textarea').hasClass('erro') ) {
+        $('textarea').addClass('borda');
+    }
+    
+    // Veri9fica se o elemento possui a classe erro e exibe um alerta 
+    if ( $('textarea').hasClass('erro') ) {
+        alert('O campo está com erro');
+    }
+
+});
