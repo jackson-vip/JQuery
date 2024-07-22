@@ -26,9 +26,9 @@ $(document).ready(() => {
 // console.log( $('#img'));
 
 // *** Combinação de seletores
-    // Selecione elementos por tag específica dentro de um elemento - $('elemento tag')
+// Selecione elementos por tag específica dentro de um elemento - $('elemento tag')
 // console.log( $('input.exemplo1')) ;
-    // Selecionar elementos por classe de classe específica dentro de um elemento - $('elemento .classe')
+// Selecionar elementos por classe de classe específica dentro de um elemento - $('elemento .classe')
 // console.log( $('.lista1 .exemplo1')) ;
 // console.log( $('.lista2 .exemplo1')) ;
 
@@ -43,7 +43,7 @@ $(document).ready(() => {
 
 // Primeira forma de execução - Mais utilizada
 // $(document).ready(() => {
-    
+
 //     function teste () {
 //         console.log($('#exemplo'));
 //     }
@@ -71,7 +71,7 @@ $(document).ready(() => {
 //     $('img').attr('border', '20');
 
 //     // console.log( $('div').attr('style', 'background-color: blue; width: 200px; height: 200px;') );
-    
+
 //     console.log( $('input').attr('type', 'password') );
 // });
 
@@ -83,7 +83,7 @@ $(document).ready(() => {
 
 //     // A utilização do método html() permite recuperar o conteúdo de um elemento
 //     console.log( 'Conteudo DIV1 : ', $('#div1').html('<strong style="color: red">Eu sou um novo conteúdo!</strong>') );
-    
+
 //     // A utilização do método text() é semelhante ao método html(), porém ele não interpreta tags HTML
 //     console.log( 'Conteudo DIV1 : ', $('#div1').text('<strong style="color: red">Eu sou um novo conteúdo!</strong>') );
 
@@ -103,8 +103,8 @@ $(document).ready(() => {
 $('.sexo:checked').val(); // Recupera o valor do campo
 
 // Com a utilização do método each() é possível percorrer todos os elementos selecionados e realizar uma ação para cada um deles
-$.each( $('.interesses:checked'), ( indice, valor ) => {
-    console.log( indice , valor.value )
+$.each($('.interesses:checked'), (indice, valor) => {
+    console.log(indice, valor.value)
 })
 
 
@@ -128,3 +128,25 @@ $(document).ready(() => {
     $('.remove-item').remove(); // Remove todos os elementos com a classe remove-item
 
 });
+
+// *** Navegando entre os elementos HTML ( parent(); closest(); find(); )
+/*  
+    » O parent() retorna o elemento pai do elemento selecionado
+    » O closest() Procura o elemento pai mais próximo que corresponde ao seletor
+    » O find() retorna os elementos filhos do elemento selecionado
+*/
+
+// Os comandos a seguir devem ser executados no console do navegador para que sejam visualizados.
+
+$(document).ready(() => {
+    console.log($('.secao1').parent()); // Retorna o elemento pais
+    console.log($('.subSecao').closest()); // Retorna o elemento mais próximo
+    console.log($('.subSecao').closest('#pagina')); // Retorna o elemento mais próximo
+    console.log($('.item').closest('#topo'));
+    console.log($('#rodape').find('p')); // Retorna os elementos filhos
+    console.log($('#topo').find('.item')); // Retorna os elementos filhos
+    console.log($('.secao1').parent().find('h1')); // Exemplo de combinação de métodos
+
+});
+
+
