@@ -387,7 +387,7 @@ $('document').ready(() => {
     //     $('#nome, #email').attr('placeholder', 'Perdeu o foco');
     // });
 
-    // O change é acionado quando o valor do elemento é alterado
+    // O change é acioum ou mais manipuladores de eventos para os elementos selecionados.ado quando o valor do elemento é alterado
     // $('#opcao').change((e) => {
     //     console.log($(e.target).val())
     // });
@@ -409,20 +409,57 @@ $(document).ready(() => {
     // O método on() é utilizado para adicionar um ou mais manipuladores de eventos para os elementos selecionados.
     // A captura do elemento body é necessária para que o evento seja acionado em elementos que ainda não foram criados
 
-    $('body').on('focus', 'input' , (e) => {
-        $(e.target).removeClass('desfocado');
-        $(e.target).addClass('foco');
-    });
+    // $('body').on('focus', 'input' , (e) => {
+    //     $(e.target).removeClass('desfocado');
+    //     $(e.target).addClass('foco');
+    // });
 
-    $('body').on('blur', 'input' , (e) => {
-        $(e.target).removeClass('foco');
-        $(e.target).addClass('desfocado');
-    });
+    // $('body').on('blur', 'input' , (e) => {
+    //     $(e.target).removeClass('foco');
+    //     $(e.target).addClass('desfocado');
+    // });
 
-    $('body').append('<br /><br /><input type="text" class="desfocado">')
+    // $('body').append('<br /><br /><input type="text" class="desfocado">')
 
     // O método off() é utilizado para remover um ou mais manipuladores de eventos para os elementos selecionados.
-    $('body').off('blur', 'input');
+    // $('body').off('blur', 'input');
+
+
+    /* 
+        Disparando Eventos de forma programática e eventos auxiliadores
+        ***************************************************************
+        trigger(), hover(), toggleClass()
+     */
+
+    // O método trigger() - é utilizado para acionar um evento programaticamente
+    $('#btn1').on('click', () => {
+        alert('BTN 2 foi clicado');
+    });
+
+    $('#btn1').on('click', () => {
+        $('#btn2').tigger('click');
+    });
+
+    // $('#div1').on('mouseenter', (e) => {
+    //     $(e.target).addClass('emDestaque')
+    // });
+
+    // $('#div1').on('mouseleave', (e) => {
+    //     $(e.target).removeClass('emDestaque')
+    // });
+
+    // O método hover() - Função auxiliar para captura dos eventos mouseenter, mouserout, mouseleave e mouseover
+    // Temos a possibilidade de reduzir a codificação a cima usando o método hover():
+
+    // $('#div1').hover(
+    //     e => $(e.target).addClass('emDestaque'),
+    //     e => $(e.target).removeClass('emDestaque')
+    // );
+
+    // O método toggleClass() - Função auxiliar para adicionar ou remover uma classe de um elemento
+    $('#div1').hover(
+        e => $(e.target).toggleClass('emDestaque'),
+    );
 
 });
 
