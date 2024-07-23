@@ -365,4 +365,43 @@ $('document').ready(() => {
     //     $('#resultadoTeclado').html('Tecla pressionada e liberada');
     // });
 
+/* 
+    Eventos de Formulário 
+    ******************
+    submit, change, focus, blur
+*/
+
+    // O focus é acionado quando o elemento recebe o foco
+    $('#nome').focus(() => {
+        $('#nome').css('background-color', 'lightblue');
+        $('#nome').attr('placeholder', 'Recebeu o foco');
+    });
+
+    // O blur é acionado quando o elemento perde o foco
+    $('#nome').blur(() => {
+        $('#nome').css('background-color', 'white');
+        $('#nome').attr('placeholder', 'Perdeu o foco');
+    });
+
+    // O change é acionado quando o valor do elemento é alterado
+    $('#opcao').change((e) => {
+        console.log($(e.target).val())
+    });
+
+    // O submit é acionado quando o formulário é submetido
+    $('#form').submit((e) => {
+        e.preventDefault();
+        console.log('Formulário submetido');
+    });
+
+    $('a').click((e) => {
+        e.preventDefault();
+        console.log('Clique no link');
+    });
 });
+
+
+
+
+
+
