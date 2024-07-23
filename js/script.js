@@ -201,7 +201,11 @@ prepend; append; before; after
 
 // *** Eventos com jQuery
 
-// »» Eventos do Browser - onload, onscroll, onresize
+/* 
+    Eventos do Browser 
+    ******************
+    onload, onscroll, onresize
+*/
 
 // $('document').ready(() => {
 
@@ -230,8 +234,11 @@ prepend; append; before; after
 // });
 
 
-// *** Eventos do Mouse
-
+/* 
+    Eventos do Mouse
+    ****************
+*/
+ 
 // »» Eventos do Mouse - mousedown, mouseup, click, dblclick, 
 // mousemove, mouseenter, mouseleave, mouseover, mouseout
 
@@ -327,5 +334,35 @@ $('document').ready(() => {
     //     console.log('Div Interna entrou');
     // });
 
+
+    /* 
+        Eventos do Teclado 
+        ******************
+        keydown, keyup, keypress  
+    */
+
+    // O keydown é acionado quando uma tecla é pressionada
+    // $('#teclado').keydown(() => {
+    //     $('#resultadoTeclado').html('Tecla pressionada');
+    // });
+
+    // O keyup é acionado quando uma tecla é liberada
+    $('#teclado').keyup((e) => {
+
+        $('#resultadoTeclado').html('Tecla liberada');
+        
+        // Temos a possibilidade de capturar o evento e verificar 
+        // qual tecla foi pressionada através da propriedade keyCode
+        if (e.keyCode == 13) {
+            txt = $(e.target).val();
+            alert('Você pressionou a tecla Enter');
+            $('#resultadoTeclado').html('Valor Capturado: ' + txt);
+        }
+    });
+
+    // O keypress é acionado quando uma tecla é pressionada e liberada
+    // $('#teclado').keypress(() => {
+    //     $('#resultadoTeclado').html('Tecla pressionada e liberada');
+    // });
 
 });
