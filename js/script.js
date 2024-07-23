@@ -372,15 +372,19 @@ $('document').ready(() => {
 */
 
     // O focus é acionado quando o elemento recebe o foco
-    $('#nome').focus(() => {
-        $('#nome').css('background-color', 'lightblue');
-        $('#nome').attr('placeholder', 'Recebeu o foco');
+    $('#nome, #email').focus((e) => {
+        evento = e.target;
+        $(evento).addClass('foco');
+        // $('#nome, #email').css('background-color', 'lightblue');
+        $('#nome, #email').attr('placeholder', 'Recebeu o foco');
     });
 
     // O blur é acionado quando o elemento perde o foco
-    $('#nome').blur(() => {
-        $('#nome').css('background-color', 'white');
-        $('#nome').attr('placeholder', 'Perdeu o foco');
+    $('#nome, #email').blur((e) => {
+        evento = e.target;
+        $(evento).removeClass('foco');
+        // $('#nome, #email').css('background-color', 'white');
+        $('#nome, #email').attr('placeholder', 'Perdeu o foco');
     });
 
     // O change é acionado quando o valor do elemento é alterado
