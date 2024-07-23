@@ -205,7 +205,7 @@ prepend; append; before; after
     Eventos do Browser 
     ******************
     onload, onscroll, onresize
-*/
+*`
 
 // $('document').ready(() => {
 
@@ -347,18 +347,18 @@ $('document').ready(() => {
     // });
 
     // O keyup é acionado quando uma tecla é liberada
-    $('#teclado').keyup((e) => {
+    // $('#teclado').keyup((e) => {
 
-        $('#resultadoTeclado').html('Tecla liberada');
+    //     $('#resultadoTeclado').html('Tecla liberada');
         
-        // Temos a possibilidade de capturar o evento e verificar 
-        // qual tecla foi pressionada através da propriedade keyCode
-        if (e.keyCode == 13) {
-            txt = $(e.target).val();
-            alert('Você pressionou a tecla Enter');
-            $('#resultadoTeclado').html('Valor Capturado: ' + txt);
-        }
-    });
+    //     // Temos a possibilidade de capturar o evento e verificar 
+    //     // qual tecla foi pressionada através da propriedade keyCode
+    //     if (e.keyCode == 13) {
+    //         txt = $(e.target).val();
+    //         alert('Você pressionou a tecla Enter');
+    //         $('#resultadoTeclado').html('Valor Capturado: ' + txt);
+    //     }
+    // });
 
     // O keypress é acionado quando uma tecla é pressionada e liberada
     // $('#teclado').keypress(() => {
@@ -372,36 +372,58 @@ $('document').ready(() => {
 */
 
     // O focus é acionado quando o elemento recebe o foco
-    $('#nome, #email').focus((e) => {
-        evento = e.target;
-        $(evento).addClass('foco');
-        // $('#nome, #email').css('background-color', 'lightblue');
-        $('#nome, #email').attr('placeholder', 'Recebeu o foco');
-    });
+    // $('#nome, #email').focus((e) => {
+    //     evento = e.target;
+    //     $(evento).addClass('foco');
+    //     // $('#nome, #email').css('background-color', 'lightblue');
+    //     $('#nome, #email').attr('placeholder', 'Recebeu o foco');
+    // });
 
     // O blur é acionado quando o elemento perde o foco
-    $('#nome, #email').blur((e) => {
-        evento = e.target;
-        $(evento).removeClass('foco');
-        // $('#nome, #email').css('background-color', 'white');
-        $('#nome, #email').attr('placeholder', 'Perdeu o foco');
-    });
+    // $('#nome, #email').blur((e) => {
+    //     evento = e.target;
+    //     $(evento).removeClass('foco');
+    //     // $('#nome, #email').css('background-color', 'white');
+    //     $('#nome, #email').attr('placeholder', 'Perdeu o foco');
+    // });
 
     // O change é acionado quando o valor do elemento é alterado
-    $('#opcao').change((e) => {
-        console.log($(e.target).val())
-    });
+    // $('#opcao').change((e) => {
+    //     console.log($(e.target).val())
+    // });
 
     // O submit é acionado quando o formulário é submetido
-    $('#form').submit((e) => {
-        e.preventDefault();
-        console.log('Formulário submetido');
+    // $('#form').submit((e) => {
+    //     e.preventDefault();
+    //     console.log('Formulário submetido');
+    // });
+
+    // $('a').click((e) => {
+    //     e.preventDefault();
+    //     console.log('Clique no link');
+    // });
+});
+
+$(document).ready(() => {
+
+    // O método on() é utilizado para adicionar um ou mais manipuladores de eventos para os elementos selecionados.
+    // A captura do elemento body é necessária para que o evento seja acionado em elementos que ainda não foram criados
+
+    $('body').on('focus', 'input' , (e) => {
+        $(e.target).removeClass('desfocado');
+        $(e.target).addClass('foco');
     });
 
-    $('a').click((e) => {
-        e.preventDefault();
-        console.log('Clique no link');
+    $('body').on('blur', 'input' , (e) => {
+        $(e.target).removeClass('foco');
+        $(e.target).addClass('desfocado');
     });
+
+    $('body').append('<br /><br /><input type="text" class="desfocado">')
+
+    // O método off() é utilizado para remover um ou mais manipuladores de eventos para os elementos selecionados.
+    $('body').off('blur', 'input');
+
 });
 
 

@@ -29,5 +29,9 @@
 }
 
 .foco {
-    background-color: #0f0;
+    background: #0f0;
+}
+
+.desfocado {
+    background-color: white
 }
