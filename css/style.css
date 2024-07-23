@@ -14,3 +14,16 @@
 .borda {
     border: 1px solid #000;
 }
+
+#divExterna {
+    background-color: #ccc;
+    width: 80px;
+    height: 80px;
+    padding: 70px;
+}
+
+#divInterna {
+    background-color: green;
+    width: 80px;
+    height: 80px;
+}

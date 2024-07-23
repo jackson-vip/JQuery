@@ -201,28 +201,131 @@ prepend; append; before; after
 
 // *** Eventos com jQuery
 
+// »» Eventos do Browser - onload, onscroll, onresize
+
+// $('document').ready(() => {
+
+//     $('#onload').html('Página carregada com sucesso!');
+
+//     // O SCROLL - é um evento que é acionado quando a barra de rolagem da página é acionada
+//     $(window).scroll(() => {
+//         $('#scroll').html('Scroll acionado');
+//     })
+
+//     // O RESIZE - é um evento que é acionado quando a janela do navegador é redimensionada
+//     $(window).resize(() => {
+//         $('#resize').html('Janela redimensionada');
+//     })
+
+//     // Function ou Arrow Function 
+//     $('#div1').scroll(function() {
+//         $(this).css('background-color', 'blue') 
+//     });
+
+//     // A Arrow Function não possui o this e por isso não é possível acessar o elemento que acionou o evento
+//     $('#div1').scroll( e => {
+//         $(e.target).css('background-color', 'blue') 
+//     });
+
+// });
+
+
+// *** Eventos do Mouse
+
+// »» Eventos do Mouse - mousedown, mouseup, click, dblclick, 
+// mousemove, mouseenter, mouseleave, mouseover, mouseout
+
 $('document').ready(() => {
 
-    $('#onload').html('Página carregada com sucesso!');
+    /* É só remover os comentários para testar os eventos. 
+    
+    */
 
-    // O SCROLL - é um evento que é acionado quando a barra de rolagem da página é acionada
-    $(window).scroll(() => {
-        $('#scroll').html('Scroll acionado');
-    })
+    // O mousedown é acionado quando o botão do mouse é pressionado
+    // $('#btn1').mousedown(() => {
+    //     $('#div2').css('background-color', 'pink')
+    // });
 
-    // O RESIZE - é um evento que é acionado quando a janela do navegador é redimensionada
-    $(window).resize(() => {
-        $('#resize').html('Janela redimensionada');
-    })
+    // O mouseup é acionado quando o botão do mouse é liberado
+    // $('#btn1').mouseup(() => {
+    //     $('#div2').css('background-color', 'lightblue')
+    // });
 
-    // Function ou Arrow Function 
-    $('#div1').scroll(function() {
-        $(this).css('background-color', 'blue') 
-    });
+    // O click é acionado quando o botão do mouse é pressionado e liberado
+    // $('#btn1').click(() => {
+    //     $('#div2').css('background-color', 'lightgreen')
+    // });
 
-    // A Arrow Function não possui o this e por isso não é possível acessar o elemento que acionou o evento
-    $('#div1').scroll( e => {
-        $(e.target).css('background-color', 'blue') 
-    });
+    // O dblclick é acionado quando o botão do mouse é pressionado e liberado duas vezes
+    // $('#btn2').dblclick(() => {
+    //     $('#div2').css('background-color', 'lightgreen')
+    // });
+
+    // O mousemove é acionado quando o mouse é movido
+    // $('#div2').mousemove(() => {
+    //     $('#div2').css('background-color', 'yellow')
+    // });
+
+    // Exemplo 2
+    // $('#div2').mousemove( (e) => {
+    //     $('#resultadoDiv').html('X:' + e.offsetX + '|  Y:' + e.offsetY);
+    // });
+
+    // O mouseenter é acionado quando o mouse entra no elemento
+    // $('#div2').mouseenter(() => {
+    //     $('#div2').css('background-color', 'purple')
+    // });
+
+    /* Mouseouver e Mouseout  (Antigos no JQuery) */
+    
+    // O mouseover é acionado quando o mouse passa por cima do elemento
+    // $('#divExterna').mouseover(() => {
+    //     $('#resultadoDiv1').html(' entou');
+    //     console.log('Div Externa entrou');
+    // });
+
+    // console.log('Div Externa entrou');
+    // $('#divInterna').mouseover(() => {
+    //     $('#resultadoDiv2').html(' entou');
+    //     console.log('Div Interna entrou');
+    // });
+
+    // O mouseout é acionado quando o mouse sai do elemento
+    // $('#divExterna').mouseout(() => {
+    //     $('#resultadoDiv1').html(' Saiu');
+    //     console.log('Div Externa saiu');
+    // });
+
+    // $('#divInterna').mouseout(() => {
+    //     $('#resultadoDiv2').html(' Saiu');
+    //     console.log('Div Interna saiu');
+    // });
+
+    /* Mouseenter e mouseleave (Novos)  */
+
+    // o mouseleave é acionado quando o mouse sai do elemento
+    // $('#divExterna').mouseleave(() => {
+    //     $('#resultadoDiv1').html(' Saiu');
+    //     console.log('Div Externa saiu');
+
+    // });
+
+    // $('#divInterna').mouseleave(() => {
+    //     $('#resultadoDiv2').html(' Saiu');
+    //     console.log('Div Interna saiu');
+    // });
+
+     // Exemplo 2
+    // $('#divExterna').mouseenter(() => {
+    //     $('#resultadoDiv1').html(' entou');
+    //     console.log('Div Externa entrou');
+
+    // });
+
+    // $('#divInterna').mouseenter(() => {
+    //     $('#resultadoDiv2').html(' entou');
+    //     console.log('Div Interna entrou');
+    // });
+
 
 });

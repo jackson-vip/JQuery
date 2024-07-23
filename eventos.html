@@ -34,10 +34,17 @@
 		<hr />
 
 		<h3>Mouse</h3>
-		<button type="button">Clique aqui</button>
-		<button type="button">Clique aqui 2x</button>
-		<div style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
-		<span>Resultado do evento sobre a div</span>
+		<button type="button" id="btn1">Clique aqui</button>
+		<button type="button" id="btn2">Clique aqui 2x</button>
+		<div id="div2" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px">
+		</div>
+		<span>Resultado do evento sobre a div: <span id="resultadoDiv"></span></span>
+
+		<div id="divExterna">
+			<div id="divInterna"></div>
+		</div>
+		<span>Div externa:</span><span id="resultadoDiv1"></span><br />
+		<span>Div interna:</span><span id="resultadoDiv2"></span>
 		<hr />
 
 		<h3>Teclado</h3>
