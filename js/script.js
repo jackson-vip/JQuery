@@ -432,13 +432,13 @@ $(document).ready(() => {
      */
 
     // O método trigger() - é utilizado para acionar um evento programaticamente
-    $('#btn1').on('click', () => {
-        alert('BTN 2 foi clicado');
-    });
+    // $('#btn1').on('click', () => {
+    //     alert('BTN 2 foi clicado');
+    // });
 
-    $('#btn1').on('click', () => {
-        $('#btn2').tigger('click');
-    });
+    // $('#btn1').on('click', () => {
+    //     $('#btn2').tigger('click');
+    // });
 
     // $('#div1').on('mouseenter', (e) => {
     //     $(e.target).addClass('emDestaque')
@@ -457,9 +457,122 @@ $(document).ready(() => {
     // );
 
     // O método toggleClass() - Função auxiliar para adicionar ou remover uma classe de um elemento
-    $('#div1').hover(
-        e => $(e.target).toggleClass('emDestaque'),
-    );
+    // $('#div1').hover(
+    //     e => $(e.target).toggleClass('emDestaque'),
+    // );
+
+});
+
+/* 
+    Efeitos Especiais 
+    *****************
+
+    Show(), Hide(), Toggle(), FadeIn(), FadeOut(), FadeToggle(), FodeTo(),
+    SlideDown(), SlideUp(), SlideToggle(), Animate()
+*/
+
+$(document).ready(() => {
+
+    // Podemos passsa os seguintes parâmetros : Slow, Fast, Medio e (Númerais) que corresponde 
+    // o tempo em milisegundos
+
+    // O método hide() - é utilizado para ocultar um elemento
+    // $('#div1').hide('slow');
+    // $('#div1').hide('medio');
+    // $('#div1').hide('fast');
+    // $('#div1').hide(3000);
+
+    // O método show() - é utilizado para exibir um elemento
+    // $('#div1').show();
+    // $('#div1').show('slow');
+    // $('#div1').show('medio');
+    // $('#div1').show('fast');
+    // $('#div1').show(3000);
+
+    // O método toggle() - é utilizado para alternar entre os métodos show() e hide()
+    $('#btn1').on( 'click', () => $('#div1').toggle('slow'));
+
+    // Vamos ver os métodos fadeIn() , fadeOut() , fadeToggle() e fadeTo()
+    
+    // $('#div2').fadeOut(); // Oculta o elemento
+
+    // $('#div2').fadeIn('slow'); // Exibe o elemento
+
+    // $('#div2').fadeToggle(); // Alterna entre os métodos fadeIn() e fadeOut()
+
+    // $('#btn2').on('click', () => $('#div2').fadeToggle('slow')); // Alterna entre os métodos fadeIn() e fadeOut()
+    
+    // »» Opacidade do elemento vai de 0 a 1
+    $('#btn2').on('click', () => $('#div2').fadeTo('slow', 0.2)); // Altera a opacidade do elemento
+
+    // Vamos ver os métodos slideDown() , slideUp() , slideToggle() e animate()
+
+    $('#div3').slideUp('slow'); // Oculta o elemento
+
+    $('#div3').slideDown('slow'); // Exibe o elemento
+
+    $('#btn3').on('click', () => $('#div3').slideToggle('slow')); // Alterna entre os métodos slideDown() e slideUp()
+
+    // O método animate() - é utilizado para criar animações personalizadas
+    
+    // Exemplo 1
+    // $('#btn4').on('click', () => { 
+    //     $('#div4').animate(
+    //         {
+    //             width: '300px',
+    //             height: '100px',
+    //             opacity: 0.5
+    //         }, 3000
+    //     );
+    // });
+
+    // Exemplo 2
+
+    // $('#btn4').on('click', () => { 
+    //     $('#div4').animate(
+    //         {
+    //             width: '300px',
+    //             height: '100px',
+    //             opacity: 0.5
+    //         }, {
+    //             duration: 3000,
+    //             start: () => console.log(('Iniciando a animação')),
+    //             complete: () => console.log(('Animação finalizada'))
+    //         }
+    //     );
+    // });
+
+    // Exemplo 3
+
+    let resultadoFinal = {
+        'width': '20px',
+        'height': '20px',
+        'border-radius': '50%',
+        'top': '0',
+        'z-index': '1',
+    }
+
+    $('#btn4').on('click', () => { 
+        $('#div4').animate(
+            resultadoFinal , {
+                duration: 3000,
+                start: () => console.log(('Iniciando a animação')),
+                complete: () => {
+                    $('#div5').animate(
+                        {
+                            'width': '30px',
+                            'height': '30px',
+                            'opacity': 0.5,
+                            'left': '50px',
+                        }, {
+                            duration: 3000,
+                        }
+                    );
+                }
+            }
+        );
+    });
+
 
 });
 

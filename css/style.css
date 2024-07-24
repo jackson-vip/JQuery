@@ -45,3 +45,47 @@
 .emDestaque {
     background-color: #f00;
 }
+
+/* Efeitos Especiais */
+
+button {
+    margin-bottom: 5px;
+    width: 100px;
+}
+
+.div {
+    width: 100px;
+    height: 100px;
+}
+
+.div1 {
+    background-color: red
+}
+
+.div2 {
+    background-color: green
+}
+
+.div3 {
+    background-color: blue
+}
+
+.div4 {
+    position: relative;
+    background-color: orange
+}
+
+.div5 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background-color: purple
+}
+
+.grupo {
+    padding: 25px;
+    float: left
+}
